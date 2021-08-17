@@ -20,7 +20,7 @@ def bruteforce(str1, str2):
         if j == len(str2):
             cnt += 1
             j = 0
-    
+
     # 가장 적은 타이핑수는 str2가 str1에 포함된 곳들을 한글자로 생각하면 된다
     return len(str1) - cnt * (len(str2) - 1)
 
