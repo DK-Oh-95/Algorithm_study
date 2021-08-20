@@ -25,7 +25,7 @@ def sudoku(arr):
             if visited[d] != 1:
                 return 0
 
-    # 사각형 검사
+    # 사각형 검사 (행렬을 3씩 구간을 나눠서 반복한다
     for k in range(0, N, 3):
         for m in range(0, N, 3):
             # 확인한 숫자 기록

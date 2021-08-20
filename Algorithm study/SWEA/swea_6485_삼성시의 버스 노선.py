@@ -19,6 +19,7 @@ for tc in range(1, T+1):
         for j in range(AB[i][0]-1, AB[i][1]):
             bus_stops[j] += 1
 
+    # 각 정류소를 지나는 노선 개수 입력
     result = []
     for i in Cj:
         result += [bus_stops[i-1]]
