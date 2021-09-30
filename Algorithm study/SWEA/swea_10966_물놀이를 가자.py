@@ -39,15 +39,34 @@ def water(cr, cc):
     #     distance += 1
 
     ########################## 그냥 계산 (제한시간 초과)
-    distance = N + M - 2
-    min_distance = N + M - 2
-    for i in range(N):
-        for j in range(M):
-            if maps[i][j] == 'W':
-                distance = abs(cr-i) + abs(cc-j)
-            if min_distance > distance:
-                min_distance = distance
-    return min_distance
+    # distance = N + M - 2
+    # min_distance = N + M - 2
+    # for i in range(N):
+    #     for j in range(M):
+    #         if maps[i][j] == 'W':
+    #             distance = abs(cr-i) + abs(cc-j)
+    #         if min_distance > distance:
+    #             min_distance = distance
+    # return min_distance
+
+    ######################### bfs
+    visited = [[0] * M for _ in range(N)]
+    visited[cr][cc] = 1
+    distance = 0
+    for dr, dc in [(-1, 0), (0, 1), (1, 0), (0, -1)]:
+        nr = cr + dr
+        nc = cc + dc
+        if 0 <= nr < N and 0 <= nc < M and maps[nr][nc] == 'W':
+            distance += 1
+            break
+        elif 0 <= nr < N and 0 <= nc < M and not visited[nr][nc]:
+            visited[nr][nc] = 1
+
+
+
+
+
+
 
 
 T = int(input())
@@ -56,6 +75,7 @@ for tc in range(1, T+1):
     maps = list(input() for _ in range(N))
 
     result = 0
+    # 출발할 L 좌표 확인
     for i in range(N):
         for j in range(M):
             if maps[i][j] == 'L':
