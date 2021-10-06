@@ -72,7 +72,7 @@ def water(cr, cc):
 T = int(input())
 for tc in range(1, T+1):
     N, M = map(int, input().split())
-    maps = list(input() for _ in range(N))
+    maps = [list(input()) for _ in range(N)]
 
     result = 0
     # 출발할 L 좌표 확인
