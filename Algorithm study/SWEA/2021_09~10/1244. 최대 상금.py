@@ -19,7 +19,7 @@ def perm(cnt):  # idx: 위치 교환을 시작할 인덱스, cnt: 교환 횟수
                 perm(cnt-1)  # 카운트 줄여서 자리 변환
             numbers[i], numbers[j] = numbers[j], numbers[i]  # 원상복구
 
-
+0
 T = int(input())
 for tc in range(1, T+1):
     numbers, count = input().split()
