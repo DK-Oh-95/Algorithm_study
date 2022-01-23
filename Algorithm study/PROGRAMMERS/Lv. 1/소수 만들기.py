@@ -1,11 +1,10 @@
 def solution(nums):
-    answer = 0
-    n = len(nums)
-    used = [0] * n
+    global answer
+
+    used = [0] * len(nums)
     power_set(used, nums)
 
-
-    return answer
+    return answer/6
 
 
 def power_set(arr, arr_nums):
@@ -21,12 +20,16 @@ def power_set(arr, arr_nums):
             if tmp % i == 0:
                 break
         else:
+            print(tmp)
             answer += 1
-
-        return
 
     for i in range(len(arr)):
         if not arr[i]:
             arr[i] = 1
-            power_set(arr)
+            power_set(arr, arr_nums)
             arr[i] = 0
+
+
+answer = 0
+
+print(solution([1,2,3,4]))
