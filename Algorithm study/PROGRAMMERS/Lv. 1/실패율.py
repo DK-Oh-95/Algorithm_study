@@ -1,3 +1,3 @@
 def solution(N, stages):
-    answer = []
+    answer = []dd
     return answer
